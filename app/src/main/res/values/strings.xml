@@ -7,4 +7,15 @@
     <string name="new_user_btn">Cadastrar</string>
     <string name="welcome_txt">Faça seu login</string>
     <string name="notepad">Notepad</string>
+    <string name="invalid_credentials">Dados inválidos! Por favor insira um login válido</string>
+    <string name="cpf">CPF</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="salvar">Salvar</string>
+    <string name="nome">Nome</string>
+    <string name="senha">Senha</string>
+    <string name="nome_de_usu_rio">Nome de usuário</string>
+    <string name="cadastre_se">Cadastre-se:</string>
+    <string name="digite_aqui_sua_nota">Digite aqui sua nota</string>
+    <string name="ol_mauro_crispim_111_222_333_44">Olá, Mauro Crispim (111.222.333-44)</string>
 </resources>
