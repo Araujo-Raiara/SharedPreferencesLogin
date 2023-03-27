@@ -4,15 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="10dp">
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/notepad_iv"
+        android:text="@string/notepad"
+        android:textSize="@dimen/title_size"
+        />
+
+    <ImageView
+        android:id="@+id/notepad_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_notepad"
+        app:layout_constraintBottom_toTopOf="@+id/welcome_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/welcome_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Faça seu login"
-        android:textSize="20sp"
+        android:text="@string/welcome_txt"
+        android:textColor="@color/black"
+        android:textSize="@dimen/subtitle_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,51 +47,65 @@
         android:id="@+id/user_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/welcome_tv"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:hint="nome do usuário"
         android:layout_marginTop="10dp"
-        />
+        android:hint="@string/user_name_txt"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcome_tv" />
 
     <EditText
         android:id="@+id/password_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/user_login"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:hint="Senha"
         android:layout_marginTop="10dp"
-        />
+        android:hint="@string/password_txt"
+        android:importantForAutofill="no"
+        android:inputType="numberPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_login" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        app:layout_constraintTop_toBottomOf="@id/password_user"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:text="@string/login_btn"
+        app:backgroundTint="@color/white"
+        app:icon="@drawable/ic_login"
+        app:iconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_user" />
 
     <TextView
         android:id="@+id/new_user_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Não é cadastrado? Faça seu cadastro"
-        android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/login_btn"
+        android:layout_marginTop="40dp"
+        android:text="@string/new_user_txt"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/login_btn" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/new_user_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastrar"
-        app:layout_constraintTop_toBottomOf="@id/new_user_tv"
+        android:layout_marginTop="10dp"
+        android:text="@string/new_user_btn"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:icon="@drawable/ic_registration"
+        app:iconTint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/new_user_tv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">LoginUser</string>
+    <string name="password_txt">Senha</string>
+    <string name="user_name_txt">Usuário</string>
+    <string name="login_btn">Login</string>
+    <string name="new_user_txt">Não é cadastrado? Faça seu cadastro</string>
+    <string name="new_user_btn">Cadastrar</string>
+    <string name="welcome_txt">Faça seu login</string>
+    <string name="notepad">Notepad</string>
 </resources>
