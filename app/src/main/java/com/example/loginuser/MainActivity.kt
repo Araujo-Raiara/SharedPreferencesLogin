@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,8 +22,11 @@ class MainActivity : AppCompatActivity() {
                 password.text.toString() == prefs.password
             ) {
                 Toast.makeText(this, "Sucesso!", Toast.LENGTH_LONG).show()
-                startActivity(Intent(applicationContext, RegisterActivity::class.java))
+                startActivity(Intent(applicationContext, NoteActivity::class.java))
             } else {
+                //
+                // TODO: colocar um snack e apagar os textos dos campos
+            }
         }
 
         val buttonNewUser = findViewById<Button>(R.id.new_user_btn)

@@ -3,15 +3,17 @@ package com.example.loginuser
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.loginuser.databinding.ActivityRegisterBinding
+import com.example.loginuser.databinding.ActivityNoteBinding
 
-class RegisterActivity : AppCompatActivity() {
+const val FILENAME = "mynote.txt"
 
-    lateinit var binding: ActivityRegisterBinding
+class NoteActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityNoteBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        binding = ActivityNoteBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
@@ -22,10 +24,7 @@ class RegisterActivity : AppCompatActivity() {
 
         val buttonOk = binding.buttonOk
         buttonOk.setOnClickListener {
-            prefs.username = binding.etUsername.text.toString()
-            prefs.password = binding.etPassword.text.toString()
-            prefs.name = binding.etNome.text.toString()
-            prefs.cpf = binding.etCPF.text.toString()
+// TODO: Salvar em um arquivo
 
             startActivity(Intent(applicationContext, MainActivity::class.java))
         }
