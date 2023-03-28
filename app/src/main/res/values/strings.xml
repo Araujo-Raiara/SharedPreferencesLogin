@@ -18,4 +18,6 @@
     <string name="cadastre_se">Cadastre-se:</string>
     <string name="digite_aqui_sua_nota">Digite aqui sua nota</string>
     <string name="ol_mauro_crispim_111_222_333_44">Olá, Mauro Crispim (111.222.333-44)</string>
+    <string name="welcome_tv">Olá, %1$s! - %2$s! </string>
+
 </resources>
