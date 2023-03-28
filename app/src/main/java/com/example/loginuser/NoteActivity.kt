@@ -1,9 +1,12 @@
 package com.example.loginuser
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.loginuser.databinding.ActivityNoteBinding
+import java.io.FileOutputStream
 
 const val FILENAME = "mynote.txt"
 
@@ -22,11 +25,16 @@ class NoteActivity : AppCompatActivity() {
             startActivity(Intent(applicationContext, MainActivity::class.java))
         }
 
-        val buttonOk = binding.buttonOk
-        buttonOk.setOnClickListener {
-        // TODO: Salvar em um arquivo
+        binding.saveNoteBtn.setOnClickListener {
+            val nota = binding.noteEt.text.toString()
 
-            startActivity(Intent(applicationContext, MainActivity::class.java))
+            val noteDetails = "nota_${System.currentTimeMillis()}.txt"
+
+            val outputStream: FileOutputStream = openFileOutput(noteDetails, Context.MODE_PRIVATE)
+            outputStream.write(nota.toByteArray())
+            outputStream.close()
+            Toast.makeText(this, "A nota foi salva", Toast.LENGTH_LONG).show()
+            finish()
         }
 
     }
@@ -35,7 +43,11 @@ class NoteActivity : AppCompatActivity() {
         super.onResume()
         val prefs = Prefs(this)
         if (prefs.username != null && prefs.cpf != null) {
-            binding.textPersonalGreeting.text = "Olá, ${prefs.username} - ${prefs.cpf}"
+            val welcomeMessage = getString(R.string.welcome_tv, prefs.username, prefs.cpf)
+            binding.textPersonalGreeting.text = welcomeMessage
         }
+
     }
+
+
 }
